@@ -1,0 +1,36 @@
+swagger: "2.0"
+info:
+  title: gateway-final-two
+  description: test api gateway
+  version: 1.0.0
+host: gateway-final-two.apigateway.test-api-project-318919.cloud.goog
+schemes:
+  - "https"
+produces:
+  - application/json
+paths:
+  /final:
+    get:
+      summary: retrieve test data
+      operationId: listData
+      x-google-backend:
+        address: https://example-gateway-service-rbdkwifrma-uc.a.run.app/
+      responses:
+        '200':
+          description: get all
+          schema:
+            type: string
+  /jdata:
+    get:
+      summary: retrieve test data
+      operationId: listjsoncollection
+      x-google-backend:
+        address: https://barkbark-api-rbdkwifrma-uc.a.run.app
+      responses:
+        '200':
+          description: get all
+          schema:
+            type: object
+
+
+         

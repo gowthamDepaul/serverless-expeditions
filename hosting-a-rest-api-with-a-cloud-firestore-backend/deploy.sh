@@ -1,4 +1,5 @@
-GOOGLE_PROJECT_ID=# YOUR GCP PROJECT ID GOES HERE
+
+GOOGLE_PROJECT_ID=test-api-project-318919
 
 gcloud builds submit --tag gcr.io/$GOOGLE_PROJECT_ID/barkbarkapi \
   --project=$GOOGLE_PROJECT_ID
