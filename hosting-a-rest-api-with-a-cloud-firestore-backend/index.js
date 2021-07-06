@@ -13,6 +13,9 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/:breed', async (req, res) => {
+    try{
+
+   
     const breed = req.params.breed;
     const query = db.collection('hospitals').where('name', '==', breed);
     const querySnapshot = await query.get();
@@ -22,6 +25,10 @@ app.get('/:breed', async (req, res) => {
     else {
         res.json({status: 'Not found'});
     }
+}
+catch (err) {
+    next(err);
+  }
 })
 
 app.post('/', async (req, res) => {
